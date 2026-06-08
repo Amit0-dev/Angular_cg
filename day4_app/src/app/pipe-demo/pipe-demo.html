@@ -1,0 +1,55 @@
+<h2>Date Formats</h2>
+<p>Short Date: {{ todayDate | date: 'shortDate' }}</p>
+<p>Long Date: {{ todayDate | date: 'longDate' }}</p>
+<p>Full Date: {{ todayDate | date: 'fullDate' }}</p>
+<p>Custom Format: {{ todayDate | date: 'dd/MM/yyyy HH:mm' }}</p>
+
+<hr />
+
+<h2>Currency Formats</h2>
+<p>INR: {{ productPrice | currency: 'INR' : 'symbol' : '1.0-0' }}</p>
+<p>USD: {{ productPrice | currency: 'USD' }}</p>
+<p>EUR: {{ productPrice | currency: 'EUR' }}</p>
+<p>GBP: {{ productPrice | currency: 'GBP' }}</p>
+
+<hr />
+
+<h2>String Transformations</h2>
+<p>
+  Title Case:
+  {{ productName | titlecase }}
+</p>
+
+<p>
+  Upper Case:
+  {{ productName | uppercase }}
+</p>
+
+<p>
+  Lower Case:
+  {{ productName | lowercase }}
+</p>
+
+<hr />
+
+<h2>Discount Percentage</h2>
+<p>{{ discount | percent: '1.2-2' }}</p>
+
+<hr />
+
+<h2>First 3 Order Items</h2>
+<ul>
+  <li *ngFor="let item of orderItems | slice: 0 : 3">
+    {{ item }}
+  </li>
+</ul>
+
+<hr />
+
+<h2>Stock Data (JSON)</h2>
+<pre>{{ stockData | json }}</pre>
+
+<hr />
+
+<h2>Full Date in Uppercase</h2>
+<p>{{ todayDate | date: 'fullDate' | uppercase }}</p>

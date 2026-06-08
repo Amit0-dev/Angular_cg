@@ -1,0 +1,18 @@
+<div class="article-card">
+  <h2>{{ blogPost.title.trim() | titlecase | slice: 0 : 40 }}...</h2>
+
+  <p>
+    <strong>Published:</strong>
+    {{ blogPost.publishedAt | date: 'EEEE, MMMM d, y' | uppercase }}
+  </p>
+
+  <p>{{ blogPost.content | slice: 0 : 80 | lowercase }}...</p>
+
+  <h4>Tags</h4>
+
+  <ul>
+    @for (tag of blogPost.tags | slice: 0 : 3; track tag) {
+      <li>{{ tag | uppercase }}</li>
+    }
+  </ul>
+</div>
